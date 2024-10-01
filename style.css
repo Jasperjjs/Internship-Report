@@ -9,7 +9,7 @@ body {
     justify-content: center;
 }
 
-h1{
+h1 {
     color: #00AEEF;
     text-align: center;
 }
@@ -24,7 +24,6 @@ p, ul {
     line-height: 1.8;
     padding: 10px;
 }
-
 
 #navbar {
     background-color: #1E1E1E;
@@ -60,10 +59,15 @@ p, ul {
 }
 
 #header {
-    padding: 100px;
-    height: 50px;
+    padding: 100px 20px; /* Added horizontal padding for mobile */
+    height: auto; /* Allow the height to adjust automatically */
     background-color: #1E1E1E;
     text-align: center;
+}
+
+#header h1 {
+    font-size: 32px; /* Adjusted font size for better readability on mobile */
+    margin: 0; /* Remove default margin */
 }
 
 #header p {
@@ -71,6 +75,7 @@ p, ul {
     color: #8FFF00;
 }
 
+/* Sections */
 .section-with-image {
     display: flex;
     justify-content: center;
@@ -82,7 +87,7 @@ p, ul {
     flex: 1;
     justify-content: center;
     padding-right: 20px;
-    text-align: left ;
+    text-align: left;
     max-width: 600px;
 }
 
@@ -104,3 +109,54 @@ footer {
     color: #8FFF00;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #header {
+        padding: 20px 10px; /* Reduced padding for mobile */
+        height: 50px;
+    }
+
+    #header h1 {
+        font-size: 28px; /* Smaller heading size for mobile */
+    }
+
+    #header p {
+        font-size: 18px; /* Adjusted font size for better readability on mobile */
+    }
+
+    .section-with-image {
+        flex-direction: column; /* Stack the image and text on smaller screens */
+        padding: 40px 10px;
+    }
+
+    .text-content {
+        padding-right: 0;
+        text-align: center; /* Center text on small screens */
+        max-width: 100%; /* Use full width on smaller screens */
+    }
+
+    .image-content {
+        padding-left: 0;
+        margin-top: 20px; /* Add some space between text and image */
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    #navbar ul {
+        display: none; /* Stack navigation links vertically */
+    }
+
+    #navbar ul li {
+        display: none; /* Space out the links */
+    }
+
+    h1, h2 {
+        font-size: 24px; /* Adjust heading sizes for smaller screens */
+    }
+
+    p, ul {
+        font-size: 18px; /* Adjust text size for readability */
+    }
+}
